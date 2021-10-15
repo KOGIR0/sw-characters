@@ -1,0 +1,21 @@
+
+#pages {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#pages button {
+    margin: 5px;
+    padding: 5px;
+    width: 2vw;
+    height: 2vw;
+    background-color:#282c34;
+    color: white;
+    border: 1px solid #282c34;
+    border-radius: 50%;
+}
+
+#pages button:hover {
+    cursor: pointer;
+}

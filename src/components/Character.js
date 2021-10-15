@@ -11,9 +11,11 @@ class Character extends React.Component
         if(this.props.info) {
             return (
                 <div className="character">
-                    <div>Name: {this.props.info.name ? this.props.info.name : "No name provided"}</div>
+                    <h2>{this.props.info.name ? this.props.info.name : "No name provided"}</h2>
                     <div>Height: {this.props.info.height ? this.props.info.height : "No height provided"}</div>
                     <div>Mass: {this.props.info.mass ? this.props.info.mass : "No mass provided"}</div>
+                    <div>Birth Year: {this.props.info.birth_year ? this.props.info.birth_year : "No birth year provided"}</div>
+                    <div>Eye Color: {this.props.info.eye_color ? this.props.info.eye_color : "No eye color provided"}</div>
                 </div>
             )
         } else {
