@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Character from './Character';
+import './CharacterList.css';
 
 class CharactersList extends React.Component
 {
@@ -28,10 +29,10 @@ class CharactersList extends React.Component
     }
 
     render() {
-        return (<div>
+        return (<div className="character-list">
             {this.state.characters ?
             this.state.characters.map((ch, i) => {
-                return <div key={i}>{JSON.stringify(ch)}</div>
+                return <Character info={ch} key={i}/>
             }) : null}
         </div>);
     }
