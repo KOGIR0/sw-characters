@@ -1,13 +1,21 @@
 import { ADD_TO_FAVORITES,
     FETCH_CHARACTERS_STARTED, 
     FETCH_CHARACTERS_FAILURE, 
-    FETCH_CHARACTERS_SUCCESS } from "./types";
+    FETCH_CHARACTERS_SUCCESS, 
+    REMOVE_FROM_FAVORITES} from "./types";
 
 export const addToFavorites = character => {
     return {
         type: ADD_TO_FAVORITES,
         payload: character
     };
+}
+
+export const removeFromFavorites = character => {
+    return {
+        type: REMOVE_FROM_FAVORITES,
+        payload: character,
+    }
 }
 
 const fetchCharactersStarted = () => {

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CharactersList from './components/CharactersList';
 import React from 'react';

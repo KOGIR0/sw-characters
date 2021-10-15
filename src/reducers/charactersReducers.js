@@ -7,17 +7,27 @@ const initialState = {
     currentPage: 1
 }
 
-export default function(state=initialState, action) {
+const charactersReducers = (state=initialState, action) => {
     switch(action.type) {
         case ADD_TO_FAVORITES:
             return {
-                favorites: [...action.payload, state.favorites]
+                ...state,
+                favorites: [action.payload, ...state.favorites]
             }
         case REMOVE_FROM_FAVORITES:
-            return state;
-        case FETCH_CHARACTERS_SUCCESS:
-            console.log(action.payload);
+            const index = state.favorites.indexOf(action.payload);
+            let favorites = state.favorites;
+            if(index > -1) {
+                favorites.splice(index, 1);
+            }
             return {
+                ...state,
+                favorites: [...favorites]
+            }
+        case FETCH_CHARACTERS_SUCCESS:
+            console.log(state);
+            return {
+                ...state,
                 characters: action.payload.characters,
                 pagesNum: action.payload.pagesNum,
                 currentPage: action.payload.currentPage
@@ -26,3 +36,5 @@ export default function(state=initialState, action) {
             return state;
     }
 }
+
+export default charactersReducers;

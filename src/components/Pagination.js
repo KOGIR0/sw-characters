@@ -1,5 +1,4 @@
 import React from 'react';
-import Character from './Character';
 import './Pagination.css';
 import { fetchCharacters } from '../actions/charactersActions';
 import { connect } from 'react-redux';

@@ -1,24 +1,25 @@
 import React from 'react';
-import { addToFavorites } from '../actions/charactersActions';
+import { addToFavorites, removeFromFavorites } from '../actions/charactersActions';
 import { connect } from 'react-redux';
 import './Character.css';
 
 class Character extends React.Component
 {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        if(this.props.info) {
+        const { info, isFavorite } = this.props;
+        if(info) {
             return (
-                <div className="character">
-                    <h2>{this.props.info.name ? this.props.info.name : "No name provided"}</h2>
-                    <div>Height: {this.props.info.height ? this.props.info.height : "No height provided"}</div>
-                    <div>Mass: {this.props.info.mass ? this.props.info.mass : "No mass provided"}</div>
-                    <div>Birth Year: {this.props.info.birth_year ? this.props.info.birth_year : "No birth year provided"}</div>
-                    <div>Eye Color: {this.props.info.eye_color ? this.props.info.eye_color : "No eye color provided"}</div>
-                    <button onClick={() => this.addToFavorites(this.props.info)}>To favorites</button>
+                <div className="character" style={isFavorite ? {backgroundColor: "orange"} : null}>
+                    <h2>{info.name ? info.name : "No name provided"}</h2>
+                    <div>Height: {info.height ? info.height : "No height provided"}</div>
+                    <div>Mass: {info.mass ? info.mass : "No mass provided"}</div>
+                    <div>Birth Year: {info.birth_year ? info.birth_year : "No birth year provided"}</div>
+                    <div>Eye Color: {info.eye_color ? info.eye_color : "No eye color provided"}</div>
+                    <div>Gender: {info.gender ? info.gender : "No gender provided"}</div>
+                    {!isFavorite ?
+                    <button onClick={() => this.props.addToFavorites(info)}>To favorites</button>
+                    :
+                    <button onClick={() => this.props.removeFromFavorites(info)}>From favorites</button>}
                 </div>
             )
         } else {
@@ -27,4 +28,4 @@ class Character extends React.Component
     }
 }
 
-export default connect(null, { addToFavorites })(Character);
+export default connect(null, { addToFavorites, removeFromFavorites })(Character);
