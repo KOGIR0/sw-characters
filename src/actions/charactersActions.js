@@ -2,13 +2,21 @@ import { ADD_TO_FAVORITES,
     FETCH_CHARACTERS_STARTED, 
     FETCH_CHARACTERS_FAILURE, 
     FETCH_CHARACTERS_SUCCESS, 
-    REMOVE_FROM_FAVORITES} from "./types";
+    REMOVE_FROM_FAVORITES,
+    SET_CURRENT_PAGE} from "./types";
 
 export const addToFavorites = character => {
     return {
         type: ADD_TO_FAVORITES,
         payload: character
     };
+}
+
+export const setCurrentPage = pageNum => {
+    return {
+        type: SET_CURRENT_PAGE,
+        payload: pageNum
+    }
 }
 
 export const removeFromFavorites = character => {

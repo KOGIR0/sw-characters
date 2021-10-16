@@ -1,4 +1,4 @@
-import { ADD_TO_FAVORITES, FETCH_CHARACTERS_SUCCESS, REMOVE_FROM_FAVORITES } from "../actions/types";
+import { ADD_TO_FAVORITES, FETCH_CHARACTERS_SUCCESS, REMOVE_FROM_FAVORITES, SET_CURRENT_PAGE } from "../actions/types";
 
 const initialState = {
     characters: [],
@@ -13,6 +13,11 @@ const charactersReducers = (state=initialState, action) => {
             return {
                 ...state,
                 favorites: [action.payload, ...state.favorites]
+            }
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.payload
             }
         case REMOVE_FROM_FAVORITES:
             const index = state.favorites.indexOf(action.payload);
