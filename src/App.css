@@ -7,6 +7,25 @@
   pointer-events: none;
 }
 
+.sort-options {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+
+.sort-options>* {
+    padding: 5px;
+    margin: 5px;
+}
+
+.sort-options>*:not(:first-child):hover {
+    cursor: pointer;
+}
+
+.sort-options>*:not(:first-child) {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+ 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -34,4 +53,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav-link {
+    color: white;
 }

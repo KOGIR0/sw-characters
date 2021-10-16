@@ -5,7 +5,6 @@ class Pagination extends React.Component
 {
     createPages(pagesNum) {
         const currentPage = this.props.currentPage;
-        console.log(pagesNum);
         const pages = [...Array(pagesNum).keys()];
         return pages.map(i => {
             return (<button style={(i + 1) === currentPage ? {backgroundColor: "orange"} : null}

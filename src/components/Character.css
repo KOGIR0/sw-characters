@@ -8,3 +8,7 @@
 .character label {
     text-align: left;
 }
+
+.to-favorites:hover {
+    cursor: pointer;;
+}

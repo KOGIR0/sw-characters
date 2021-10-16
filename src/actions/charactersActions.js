@@ -3,7 +3,8 @@ import { ADD_TO_FAVORITES,
     FETCH_CHARACTERS_FAILURE, 
     FETCH_CHARACTERS_SUCCESS, 
     REMOVE_FROM_FAVORITES,
-    SET_CURRENT_PAGE} from "./types";
+    SET_CURRENT_PAGE
+} from "./types";
 
 export const addToFavorites = character => {
     return {
@@ -67,7 +68,6 @@ export const fetchCharacters = page => {
             }))
         })
         .catch(e => {
-            console.log("Error getting data", e);
             dispatch(fetchCharactersFailure());
         })
     }

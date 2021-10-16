@@ -2,6 +2,7 @@ import React from 'react';
 import { addToFavorites, removeFromFavorites } from '../actions/charactersActions';
 import { connect } from 'react-redux';
 import './Character.css';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 
 class Character extends React.Component
 {
@@ -9,7 +10,7 @@ class Character extends React.Component
         const { info, isFavorite } = this.props;
         if(info) {
             return (
-                <div className="character" style={isFavorite ? {backgroundColor: "orange"} : null}>
+                <div className="character">
                     <h2>{info.name ? info.name : "No name provided"}</h2>
                     <div>Height: {info.height ? info.height : "No height provided"}</div>
                     <div>Mass: {info.mass ? info.mass : "No mass provided"}</div>
@@ -17,9 +18,17 @@ class Character extends React.Component
                     <div>Eye Color: {info.eye_color ? info.eye_color : "No eye color provided"}</div>
                     <div>Gender: {info.gender ? info.gender : "No gender provided"}</div>
                     {!isFavorite ?
-                    <button onClick={() => this.props.addToFavorites(info)}>To favorites</button>
+                    <div 
+                    className="to-favorites" 
+                    onClick={() => this.props.addToFavorites(info)}>
+                        <FaRegStar fill="orange"/>
+                    </div>
                     :
-                    <button onClick={() => this.props.removeFromFavorites(info)}>From favorites</button>}
+                    <div
+                    className="to-favorites"
+                    onClick={() => this.props.removeFromFavorites(info)}>
+                        <FaStar fill="orange"/>
+                    </div>}
                 </div>
             )
         } else {
