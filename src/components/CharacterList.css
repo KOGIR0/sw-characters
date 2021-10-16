@@ -1,4 +1,31 @@
 .character-list {
-    display: flex;
-    flex-wrap: wrap;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.character-list>* {
+    box-sizing: border-box;
+    width: 20vw;
+    margin: 5px auto 5px auto;
+}
+
+@media screen and (max-width: 750px) {
+    .character-list {
+        grid-template-columns: auto auto;
+    }
+
+    .character-list>* {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .character-list {
+        grid-template-columns: auto;
+    }
+
+    .character-list>* {
+        width: 90vw;
+    }
 }

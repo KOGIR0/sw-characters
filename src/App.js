@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { fetchCharacters, setCurrentPage } from './actions/charactersActions';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 class App extends React.Component {
-
     componentDidMount() {
         console.log("Mount");
         this.props.fetchCharacters(1);
@@ -21,7 +20,11 @@ class App extends React.Component {
                         <h1>Star Wars Characters</h1>
                         <Switch>
                             <Route exact path="/">
-                                <Link to="/favorites" onClick={() => this.props.setCurrentPage(1)}>Show favorites</Link>
+                                <Link 
+                                to="/favorites" 
+                                onClick={() => this.props.setCurrentPage(1)}>
+                                    Show favorites
+                                </Link>
                             </Route>
                             <Route exact path="/favorites">
                                 <Link to="/">Show all</Link>
@@ -30,12 +33,25 @@ class App extends React.Component {
                     </header>
                     <Switch>
                         <Route exact path="/">
-                            <CharactersList characters={characters} favorites={favorites}/>
-                            <Pagination pagesNum={pagesNum} currentPage={currentPage} onPageClick={this.props.fetchCharacters}/>
+                            <CharactersList 
+                            characters={characters} 
+                            favorites={favorites}
+                            />
+                            <Pagination 
+                            pagesNum={pagesNum} 
+                            currentPage={currentPage} 
+                            onPageClick={this.props.fetchCharacters}
+                            />
                         </Route>
                         <Route exact path="/favorites">
-                            <CharactersList characters={null} favorites={favorites.slice((currentPage - 1)*10, currentPage*10)}/>
-                            <Pagination pagesNum={Math.floor(favorites.length / 10) + 1} currentPage={currentPage} onPageClick={this.props.setCurrentPage}/>
+                            <CharactersList 
+                            characters={null} 
+                            favorites={favorites.slice((currentPage - 1)*10, currentPage*10)}
+                            />
+                            <Pagination 
+                            pagesNum={Math.floor(favorites.length / 10) + 1} 
+                            currentPage={currentPage} 
+                            onPageClick={this.props.setCurrentPage}/>
                         </Route>
                     </Switch>
                 </div>
