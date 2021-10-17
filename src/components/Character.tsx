@@ -16,7 +16,7 @@ import {
     GiBodyHeight,
     GiWeight
 } from 'react-icons/gi';
-import { CharacterProps } from '../types/CharacterTypes';
+import { CharacterProps } from '../types/Character';
 
 class Character extends React.Component<CharacterProps>
 {

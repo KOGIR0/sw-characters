@@ -5,7 +5,7 @@ import { ADD_TO_FAVORITES,
     REMOVE_FROM_FAVORITES,
     SET_CURRENT_PAGE
 } from "./actionTypes";
-import { FetchCharactersSuccessType } from "../types/charactersActionsTypes";
+import { FetchCharactersSuccessType } from "../types/charactersActions";
 
 export const addToFavorites = (character: any) => {
     return {

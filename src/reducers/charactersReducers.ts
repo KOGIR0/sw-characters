@@ -4,7 +4,7 @@ import {
     REMOVE_FROM_FAVORITES, 
     SET_CURRENT_PAGE
 } from "../actions/actionTypes";
-import { CharactersReducerStateType, ActionType } from "../types/CharacterReducersTypes";
+import { CharactersReducerStateType, ActionType } from "../types/CharacterReducers";
 
 const initialState = {
     characters: [],

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Pagination.css';
-import { PaginationProps } from '../types/PaginationTypes';
+import { PaginationProps } from '../types/Pagination';
 
 class Pagination extends React.Component<PaginationProps>
 {

@@ -1,4 +1,4 @@
-import { CharactersReducerStateType } from "./CharacterReducersTypes"
+import { CharactersReducerStateType } from "./CharacterReducers"
 
 export type AllReducersType = {
     characters: CharactersReducerStateType
