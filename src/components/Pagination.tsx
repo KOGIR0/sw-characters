@@ -1,11 +1,6 @@
 import React from 'react';
 import './Pagination.css';
-
-type PaginationProps = {
-    currentPage: Number,
-    pagesNum: Number,
-    onPageClick: (n: Number) => void,
-}
+import { PaginationProps } from '../types/PaginationTypes';
 
 class Pagination extends React.Component<PaginationProps>
 {

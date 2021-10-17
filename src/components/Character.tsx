@@ -16,13 +16,7 @@ import {
     GiBodyHeight,
     GiWeight
 } from 'react-icons/gi';
-
-type CharacterProps = {
-    info: any,
-    isFavorite: boolean,
-    removeFromFavorites: Function,
-    addToFavorites: Function
-}
+import { CharacterProps } from '../types/CharacterTypes';
 
 class Character extends React.Component<CharacterProps>
 {

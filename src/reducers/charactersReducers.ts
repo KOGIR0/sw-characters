@@ -4,19 +4,7 @@ import {
     REMOVE_FROM_FAVORITES, 
     SET_CURRENT_PAGE
 } from "../actions/actionTypes";
-import { FetchCharactersSuccessType } from "../actions/charactersActions";
-
-export type CharactersReducerStateType = {
-    characters: any,
-    favorites: any,
-    pagesNum: number,
-    currentPage: number
-}
-
-type ActionType = {
-    type: String,
-    payload: Number | FetchCharactersSuccessType
-}
+import { CharactersReducerStateType, ActionType } from "../types/CharacterReducersTypes";
 
 const initialState = {
     characters: [],

@@ -5,6 +5,7 @@ import { ADD_TO_FAVORITES,
     REMOVE_FROM_FAVORITES,
     SET_CURRENT_PAGE
 } from "./actionTypes";
+import { FetchCharactersSuccessType } from "../types/charactersActionsTypes";
 
 export const addToFavorites = (character: any) => {
     return {
@@ -31,12 +32,6 @@ const fetchCharactersStarted = () => {
     return {
         type: FETCH_CHARACTERS_STARTED
     };
-}
-
-export type FetchCharactersSuccessType = {
-    characters: any,
-    pagesNum: Number,
-    currentPage: Number
 }
 
 const fetchCharactersSuccess = ({characters, pagesNum, currentPage}: FetchCharactersSuccessType) => {

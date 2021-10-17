@@ -1,11 +1,7 @@
 import React from 'react';
 import Character from './Character';
 import './CharacterList.css';
-
-type CharactersListProps = {
-    characters: Array<any> | null,
-    favorites: Array<any>
-}
+import { CharactersListProps } from '../types/CharacterListTypes';
 
 class CharactersList extends React.Component<CharactersListProps>
 {
