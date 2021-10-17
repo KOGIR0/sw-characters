@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import charactersReducers from "./charactersReducers";
 
-const allReducers = combineReducers({
+const combinedReducers = combineReducers({
     characters: charactersReducers,
 });
 
-export default allReducers;
+export default combinedReducers;

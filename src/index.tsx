@@ -5,11 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import allReducers from './reducers/combinedReducer';
+import combinedReducers from './reducers/combinedReducer';
 import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-let store = createStore(allReducers, applyMiddleware(thunk));
+let store = createStore(combinedReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,4 +1,4 @@
-import { FetchCharactersSuccessType } from "../types/charactersActionsTypes";
+import { FetchCharactersSuccessType } from "./charactersActions";
 
 export type CharactersReducerStateType = {
     characters: any,
