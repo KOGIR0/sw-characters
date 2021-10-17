@@ -3,11 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCharacters, setCurrentPage } from './actions/charactersActions';
 import { Route, Switch, NavLink } from 'react-router-dom';
-import { AppProps, AppState } from './types/App';
+import { AppProps } from './types/App';
 import FavoritesPage from './components/FavoritesPage';
 import AllCharactersPage from './components/AllCharactersPage';
 
-class App extends React.Component<AppProps, AppState> {
+class App extends React.Component<AppProps> {
     componentDidMount() {
         this.props.fetchCharacters(1);
     }

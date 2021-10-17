@@ -1,7 +1,7 @@
 import React from 'react';
 import Character from './Character';
 import '../styles/CharacterList.css';
-import { CharactersListProps } from '../types/CharacterList';
+import { CharactersListProps } from '../types/CharactersList';
 
 class CharactersList extends React.Component<CharactersListProps>
 {
