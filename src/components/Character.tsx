@@ -17,9 +17,16 @@ import {
     GiWeight
 } from 'react-icons/gi'
 
-class Character extends React.Component
+type CharacterProps = {
+    info: any,
+    isFavorite: boolean,
+    removeFromFavorites: Function,
+    addToFavorites: Function
+}
+
+class Character extends React.Component<CharacterProps>
 {
-    findGender(gender) {
+    findGender(gender: String) {
         switch(gender) {
             case 'male':
                 return <FaMars />

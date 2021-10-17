@@ -6,10 +6,24 @@ import { connect } from 'react-redux';
 import { fetchCharacters, setCurrentPage } from './actions/charactersActions';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { AllReducersType } from './reducers';
 
+type AppProps = {
+    setCurrentPage: (n: Number) => void,
+    fetchCharacters: (n: Number) => void,
+    favorites: Array<any>,
+    characters: Array<any>,
+    currentPage: number,
+    pagesNum: number
+}
 
-class App extends React.Component {
-    constructor(props) {
+type AppState = {
+    isSortedByName: boolean,
+    ascending: boolean
+}
+
+class App extends React.Component<AppProps, AppState> {
+    constructor(props: AppProps) {
         super(props);
         this.state = {
             isSortedByName: false,
@@ -108,7 +122,7 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AllReducersType) => ({
     characters: state.characters.characters,
     favorites: state.characters.favorites,
     currentPage: state.characters.currentPage,

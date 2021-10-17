@@ -2,7 +2,12 @@ import React from 'react';
 import Character from './Character';
 import './CharacterList.css';
 
-class CharactersList extends React.Component
+type CharactersListProps = {
+    characters: Array<any> | null,
+    favorites: Array<any>
+}
+
+class CharactersList extends React.Component<CharactersListProps>
 {
     render() {
         const { characters, favorites } = this.props;

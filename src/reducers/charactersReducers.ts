@@ -3,7 +3,20 @@ import {
     FETCH_CHARACTERS_SUCCESS, 
     REMOVE_FROM_FAVORITES, 
     SET_CURRENT_PAGE
-} from "../actions/types";
+} from "../actions/actionTypes";
+import { FetchCharactersSuccessType } from "../actions/charactersActions";
+
+export type CharactersReducerStateType = {
+    characters: any,
+    favorites: any,
+    pagesNum: number,
+    currentPage: number
+}
+
+type ActionType = {
+    type: String,
+    payload: Number | FetchCharactersSuccessType
+}
 
 const initialState = {
     characters: [],
@@ -12,7 +25,7 @@ const initialState = {
     currentPage: 1
 }
 
-const charactersReducers = (state=initialState, action) => {
+const charactersReducers = (state: CharactersReducerStateType = initialState, action: ActionType) => {
     switch(action.type) {
         case ADD_TO_FAVORITES:
             return {
@@ -37,9 +50,7 @@ const charactersReducers = (state=initialState, action) => {
         case FETCH_CHARACTERS_SUCCESS:
             return {
                 ...state,
-                characters: action.payload.characters,
-                pagesNum: action.payload.pagesNum,
-                currentPage: action.payload.currentPage
+                ...action.payload
             }
         default:
             return state;
