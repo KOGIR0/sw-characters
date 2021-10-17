@@ -1,6 +1,6 @@
 import React from 'react';
 import Character from './Character';
-import './CharacterList.css';
+import '../styles/CharacterList.css';
 import { CharactersListProps } from '../types/CharacterList';
 
 class CharactersList extends React.Component<CharactersListProps>

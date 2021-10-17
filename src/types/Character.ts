@@ -1,4 +1,4 @@
-export type CharacterProps = {
+export interface CharacterProps {
     info: any,
     isFavorite: boolean,
     removeFromFavorites: Function,

@@ -1,13 +1,9 @@
-export type AppProps = {
+export interface AppProps {
     setCurrentPage: (n: Number) => void,
-    fetchCharacters: (n: Number) => void,
-    favorites: Array<any>,
-    characters: Array<any>,
-    currentPage: number,
-    pagesNum: number
+    fetchCharacters: (n: Number) => void
 }
 
-export type AppState = {
+export interface AppState {
     isSortedByName: boolean,
     ascending: boolean
 }

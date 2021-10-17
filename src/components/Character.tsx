@@ -1,7 +1,7 @@
 import React from 'react';
 import { addToFavorites, removeFromFavorites } from '../actions/charactersActions';
 import { connect } from 'react-redux';
-import './Character.css';
+import '../styles/Character.css';
 import { 
     FaStar, 
     FaRegStar, 

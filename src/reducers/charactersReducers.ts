@@ -2,7 +2,8 @@ import {
     ADD_TO_FAVORITES, 
     FETCH_CHARACTERS_SUCCESS, 
     REMOVE_FROM_FAVORITES, 
-    SET_CURRENT_PAGE
+    SET_CURRENT_PAGE,
+    FETCH_CHARACTERS_STARTED
 } from "../actions/actionTypes";
 import { CharactersReducerStateType, ActionType } from "../types/CharacterReducers";
 
@@ -10,7 +11,8 @@ const initialState = {
     characters: [],
     favorites: [],
     pagesNum: 0,
-    currentPage: 1
+    currentPage: 1,
+    isLoading: true,
 }
 
 const charactersReducers = (state: CharactersReducerStateType = initialState, action: ActionType) => {
@@ -38,7 +40,13 @@ const charactersReducers = (state: CharactersReducerStateType = initialState, ac
         case FETCH_CHARACTERS_SUCCESS:
             return {
                 ...state,
-                ...action.payload
+                ...action.payload,
+                isLoading: false
+            }
+        case FETCH_CHARACTERS_STARTED:
+            return {
+                ...state,
+                isLoading: true
             }
         default:
             return state;
