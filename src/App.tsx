@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { fetchCharacters, setCurrentPage } from './actions/charactersActions';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
-import { AllReducersType } from './types/combinedReducer';
+import { CombinedReducersType } from './types/combinedReducer';
 import { AppProps, AppState } from './types/App';
 
 class App extends React.Component<AppProps, AppState> {
@@ -107,7 +107,7 @@ class App extends React.Component<AppProps, AppState> {
     }
 }
 
-const mapStateToProps = (state: AllReducersType) => ({
+const mapStateToProps = (state: CombinedReducersType) => ({
     characters: state.characters.characters,
     favorites: state.characters.favorites,
     currentPage: state.characters.currentPage,

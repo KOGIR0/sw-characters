@@ -1,5 +1,5 @@
 import { CharactersReducerStateType } from "./CharacterReducers"
 
-export type AllReducersType = {
+export type CombinedReducersType = {
     characters: CharactersReducerStateType
 }
