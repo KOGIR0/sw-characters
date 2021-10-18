@@ -10,7 +10,7 @@ App uses [star wars api](https://swapi.dev/)
 ## Scripts
 
 ### - npm start
-Starts the app
+To Start the app
 
 ### - npm build
-Builds the app
+To Build the app
